@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Register</title>
+    </head>
+<body>
+<div className="signup-container">
+      <div className="signup-image"></div>
+      <div className="signup-form">
+        <h1 className="logo">AGAR</h1>
+        <h2 className="tagline">Log in to unlock the best of <span className="highlight">AGAR.</span></h2>
+
+        <form action="/register" method="POST">
+          <label>First Name *</label>
+          <input type="text" name="firstname" value={formData.firstName} onChange={handleChange} required />
+
+          <label>Last Name *</label>
+          <input type="text" name="lastname" value={formData.lastName} onChange={handleChange} required />
+
+          <label>Email *</label>
+          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+
+          <label>Phone</label>
+          <div className="phone-input">
+            <span>+1</span>
+            <input type="text" name="phone" value={formData.phone} onChange={handleChange} />
+          </div>
+
+          <label>Password *</label>
+          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+          <p className="password-hint">
+            Password must be at least 8 characters long, with an uppercase, lowercase letter, and special character.
+          </p>
+
+         
+          <button type="submit" className="signup-button">Sign Up</button>
+        </form>
+
+        <p className="login-link">
+          Already a member? <a href="#">Log In</a>
+        </p>
+      </div>
+    </div>
+</body>
+</html>
