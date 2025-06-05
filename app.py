@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import bcrypt
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app, supports_credentials=True, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+CORS(app, supports_credentials=True, resources={r"/api/*": {"origins": "http://localhost:3001"}})
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'secret_key'
