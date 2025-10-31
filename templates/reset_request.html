@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New login page</title>
+    <style>
+        .flash-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-image"></div>
+        <div class="login-form">
+            <h1 class="logo">AGAR</h1>
+            <h2 class="tagline">Log in to unlock the best of <span class="highlight">AGAR.</span></h2>
+
+            <!-- FLASH MESSAGE DISPLAY BLOCK -->
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+            <!-- FORM -->
+            <form action="/reset_request" method="POST">
+                <label>Email *</label>
+                <input type="email" name="email" required />
+                <button type="submit" class="login-button">Reset</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
